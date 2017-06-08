@@ -4,22 +4,26 @@ $(document).ready(function() {
     var allergies = $("select#allergies").val();
     var activity = $("select#activity").val();
 
-    if(age < 18 && allergies ==='yes' && activity === high) {
-      ("#Doodle").show;
-      ("#pug").hide;
-      ("#lab").hide;
-    } if else {
-      (age >= 18 && allergies ==='no' && activity === high) {
-      ("#lab").show;
-      ("#Doodle").hide;
-      ("#pug").hide;
+    if (age < 18 && allergies === 'yes' && activity === 'high') {
+      $("#doodle").show();
+      $("#pug").hide();
+      $("#lab").hide();
+    } else if (age >= 18 && allergies === 'no' && activity === 'high') {
+      $("#lab").show();
+      $("#doodle").hide();
+      $("#pug").hide();
+    } else if (age >= 18 && allergies === 'yes') {
+      $("#lab").hide();
+      $("#doodle").show();
+      $("#pug").hide();
     } else {
-      (age >= 1 && allergies ==='no' && activity === low) {
-      ("#pug").show;
-      ("#lab").hide;
-      ("#Doodle").hide;
+      $("#pug").show();
+      $("#lab").hide();
+      $("#doodle").hide();
     }
-
+console.log(activity);
+console.log(allergies);
+console.log(age);
     event.preventDefault();
   });
 });
